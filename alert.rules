@@ -1,0 +1,11 @@
+groups:
+- name: prometheus
+  rules:
+  - alert: PrometheusTooManyRestarts
+    expr: increase(kube_pod_container_status_restarts_total{container="prometheus-server"}[15m]) > 1
+    for: 0m
+    labels:
+      severity: warning
+    annotations:
+      summary: Prometheus too many restarts
+      description: "Prometheus has restarted more than once in the last 15 minutes. It might be crashlooping."
