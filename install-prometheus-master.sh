@@ -21,7 +21,7 @@ chown prometheus:prometheus /usr/local/bin/promtool
 cp -r --remove-destination prometheuspackage/consoles /etc/prometheus
 cp -r --remove-destination prometheuspackage/console_libraries /etc/prometheus
 cp --remove-destination prometheus.yml /etc/prometheus/prometheus.yml
-cp --remove-destination alert.rules /etc/prometheus/prometheus.yml
+cp --remove-destination alert.rules /etc/prometheus/alert.rules
 chown -R prometheus:prometheus /etc/prometheus/
 
 mv -f prometheus.service /usr/lib/systemd/system/prometheus.service
