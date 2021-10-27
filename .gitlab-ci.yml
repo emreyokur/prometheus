@@ -1,0 +1,8 @@
+stages:
+  - "install"
+
+image: alpine
+
+1.1-install:
+  stage: download
+  script: sh install-prometheus-master.sh
